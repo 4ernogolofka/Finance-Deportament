@@ -1,5 +1,5 @@
 // Офлайн-кэш веб-версии: сначала сеть (чтобы обновления приходили сразу), при отсутствии связи — сохранённая копия.
-const CACHE = 'fd-v1';
+const CACHE = 'fd-v2';
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', (e) => {
