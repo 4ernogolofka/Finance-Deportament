@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Finance">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>Finance Deportament</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dollar.css">
+  <link rel="stylesheet" href="web.css">
+</head>
+<body>
+  <div class="dragbar"></div>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="brand"><span class="dollar" id="brandDollar" aria-hidden="true"></span><span class="brand-name">Finance<br>Deportament</span></div>
+      <nav id="nav">
+        <button data-act="nav" data-view="overview">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="8" rx="2"/><rect x="13.5" y="3.5" width="7" height="5" rx="2"/><rect x="13.5" y="11.5" width="7" height="9" rx="2"/><rect x="3.5" y="14.5" width="7" height="6" rx="2"/></svg>
+          Обзор
+        </button>
+        <button data-act="nav" data-view="income">
+          <svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg>
+          Доходы
+        </button>
+        <button data-act="nav" data-view="expenses">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="14" rx="3"/><path d="M3.5 10h17M8 15h3"/></svg>
+          Расходы
+        </button>
+        <button data-act="nav" data-view="events">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          События
+        </button>
+        <button data-act="nav" data-view="tasks">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+          Задачи
+        </button>
+      </nav>
+      <button class="side-settings" data-act="settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+        Настройки
+      </button>
+    </aside>
+    <main id="view" class="view"></main>
+  </div>
+
+  <div id="modal" class="modal" hidden></div>
+
+  <div id="login" class="login" hidden>
+    <form class="sheet" id="loginForm" novalidate>
+      <div class="brand"><span class="dollar" id="loginDollar" aria-hidden="true"></span><span class="brand-name">Finance<br>Deportament</span></div>
+      <p>Войдите, чтобы увидеть свои записи.</p>
+      <label class="field"><span>Почта</span><input type="text" name="email" autocomplete="username" inputmode="email" autocapitalize="off"></label>
+      <label class="field"><span>Пароль</span><input type="password" name="password" autocomplete="current-password"></label>
+      <div class="err" id="loginErr"></div>
+      <button type="submit" class="btn primary">Войти</button>
+    </form>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script src="web-api.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="cloud-web.js"></script>
+</body>
+</html>
